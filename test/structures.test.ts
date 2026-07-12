@@ -17,6 +17,14 @@ describe('LinkedList', () => {
     expect(list.indexOf(3)).toBe(2);
     expect([...list]).toEqual([1, 2, 3]);
   });
+
+  it('shift e get em lista vazia retornam undefined', () => {
+    const list = new LinkedList<number>();
+    expect(list.shift()).toBeUndefined();
+    expect(list.get(0)).toBeUndefined();
+    expect(list.isEmpty()).toBe(true);
+    expect(list.size).toBe(0);
+  });
 });
 
 describe('Stack (LIFO)', () => {
@@ -26,6 +34,13 @@ describe('Stack (LIFO)', () => {
     expect(s.peek()).toBe('b');
     expect(s.pop()).toBe('b');
     expect(s.pop()).toBe('a');
+    expect(s.isEmpty()).toBe(true);
+  });
+
+  it('pop em pilha vazia retorna undefined', () => {
+    const s = new Stack<number>();
+    expect(s.pop()).toBeUndefined();
+    expect(s.peek()).toBeUndefined();
     expect(s.isEmpty()).toBe(true);
   });
 });
@@ -38,6 +53,13 @@ describe('Queue (FIFO)', () => {
     expect(q.dequeue()).toBe(1);
     expect(q.dequeue()).toBe(2);
     expect(q.size).toBe(1);
+  });
+
+  it('dequeue em fila vazia retorna undefined', () => {
+    const q = new Queue<number>();
+    expect(q.dequeue()).toBeUndefined();
+    expect(q.peek()).toBeUndefined();
+    expect(q.isEmpty()).toBe(true);
   });
 });
 
@@ -60,6 +82,13 @@ describe('MinHeap', () => {
     while (!h.isEmpty()) out.push(h.pop()!);
     expect(out).toEqual([1, 2, 3, 5, 8, 9]);
   });
+
+  it('pop em heap vazio retorna undefined', () => {
+    const h = new MinHeap<number>();
+    expect(h.pop()).toBeUndefined();
+    expect(h.peek()).toBeUndefined();
+    expect(h.isEmpty()).toBe(true);
+  });
 });
 
 describe('Graph', () => {
@@ -69,5 +98,20 @@ describe('Graph', () => {
     expect(g.bfs('A')).toEqual(['A', 'B', 'C', 'D']);
     expect(g.dfs('A')).toEqual(['A', 'B', 'D', 'C']);
     expect(g.neighbors('A').sort()).toEqual(['B', 'C']);
+  });
+
+  it('bfs e dfs em vértice inexistente retornam []', () => {
+    const g = new Graph<string>();
+    expect(g.bfs('Z')).toEqual([]);
+    expect(g.dfs('Z')).toEqual([]);
+  });
+
+  it('grafo direcionado percorre apenas no sentido das arestas', () => {
+    const g = new Graph<string>(true);
+    g.addEdge('A', 'B').addEdge('B', 'C');
+    expect(g.bfs('A')).toEqual(['A', 'B', 'C']);
+    expect(g.dfs('A')).toEqual(['A', 'B', 'C']);
+    expect(g.bfs('C')).toEqual(['C']);
+    expect(g.neighbors('C')).toEqual([]);
   });
 });

@@ -35,6 +35,7 @@ export class Graph<T> {
 
   /** Busca em largura a partir de `start`. O(V + E) */
   bfs(start: T): T[] {
+    if (!this.adjacency.has(start)) return [];
     const visited = new Set<T>();
     const order: T[] = [];
     const queue: T[] = [start];

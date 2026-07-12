@@ -4,7 +4,6 @@
  * | Operação        | Complexidade |
  * |-----------------|--------------|
  * | push / unshift  | O(1)         |
- * | pop             | O(n)         |
  * | shift           | O(1)         |
  * | get / indexOf   | O(n)         |
  */
