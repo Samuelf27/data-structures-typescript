@@ -1,5 +1,5 @@
 {
-  "name": "@samuelf27/data-structures",
+  "name": "@eusamuelf/data-structures",
   "version": "1.0.0",
   "description": "Estruturas de dados e algoritmos clássicos implementados em TypeScript, com tipagem genérica e testes.",
   "type": "module",

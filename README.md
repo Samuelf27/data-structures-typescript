@@ -42,7 +42,7 @@ Implementações **do zero**, genéricas e tipadas, das estruturas de dados e al
 ## 🚀 Uso
 
 ```ts
-import { MinHeap, quickSort, Graph } from '@samuelf27/data-structures';
+import { MinHeap, quickSort, Graph } from '@eusamuelf/data-structures';
 
 quickSort([5, 2, 9, 1]); // [1, 2, 5, 9]
 
