@@ -7,7 +7,7 @@ Estruturas de dados e algoritmos clássicos implementados em <b>TypeScript</b> �
 <p align="center">
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white"/>
   <img src="https://github.com/Samuelf27/data-structures-typescript/actions/workflows/ci.yml/badge.svg"/>
-  <img src="https://img.shields.io/badge/tests-13%20passing-34d399?style=flat"/>
+  <img src="https://img.shields.io/badge/tests-19%20passing-34d399?style=flat"/>
   <img src="https://img.shields.io/badge/dependencies-0-blue?style=flat"/>
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat"/>
 </p>
@@ -61,7 +61,7 @@ Todas as estruturas são **genéricas** e aceitam um **comparador** customizado 
 
 ```bash
 npm install
-npm test          # 13 testes (Vitest)
+npm test          # 19 testes (Vitest)
 npm run typecheck
 npm run build     # dist/ (ESM + CJS + .d.ts)
 ```
