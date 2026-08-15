@@ -66,6 +66,22 @@ npm run typecheck
 npm run build     # dist/ (ESM + CJS + .d.ts)
 ```
 
+## 🧪 Testes
+
+**19 testes** em 2 arquivos (Vitest), rodando no CI a cada push e pull request.
+
+| Arquivo | Cobre |
+|---|---|
+| `test/structures.test.ts` | `LinkedList`, `Stack` (LIFO), `Queue` (FIFO) e `BinarySearchTree` |
+| `test/algorithms.test.ts` | Ordenação com comparador customizado, `binarySearch` e `linearSearch` |
+
+Os casos de borda são explícitos: operação em estrutura vazia retorna `undefined` em vez de lançar, busca ausente retorna `-1`, e a ordenação lida com arrays vazios e unitários.
+
+```bash
+npm test           # roda a suíte
+npm run test:watch # modo watch
+```
+
 ## 📄 Licença
 
 [MIT](LICENSE) © Samuel Ferreira
