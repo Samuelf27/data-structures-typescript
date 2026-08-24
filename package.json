@@ -28,7 +28,7 @@
   "publishConfig": { "access": "public" },
   "devDependencies": {
     "tsup": "^8.1.0",
-    "typescript": "^5.4.5",
+    "typescript": "^7.0.2",
     "vitest": "^4.1.10"
   }
 }
